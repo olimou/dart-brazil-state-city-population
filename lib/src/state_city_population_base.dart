@@ -13,8 +13,8 @@ import 'package:state_city_population/src/city.dart';
 class StateCity {
   Map states = new Map();
 
-  Future init() async {
-    await new File('json/data.json')
+  Future init(String iso_code) async {
+    await new File('json/$iso_code/data.json')
         .readAsString()
         .then((fileContents) => JSON.decode(fileContents))
         .then((Map jsonData) {

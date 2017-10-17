@@ -6,7 +6,7 @@ import 'package:state_city_population/state_city_population.dart';
 main() {
   var awesome = new StateCity();
 
-  awesome.init().then((data) {
+  awesome.init("BR").then((data) {
     print(awesome.listStates());
 
     print(awesome.listCities("SP"));
