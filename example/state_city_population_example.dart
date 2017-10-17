@@ -5,5 +5,14 @@ import 'package:state_city_population/state_city_population.dart';
 
 main() {
   var awesome = new StateCity();
-  print('awesome: ${awesome.isAwesome}');
+
+  awesome.init().then((data) {
+    print(awesome.listStates());
+
+    print(awesome.listCities("SP"));
+
+    awesome.listCities("SP").forEach((city) {
+      print("${city.name}: ${city.population}");
+    });
+  });
 }

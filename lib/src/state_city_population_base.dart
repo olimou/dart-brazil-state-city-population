@@ -1,6 +1,7 @@
 // Copyright (c) 2017, emersonmoura. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -12,8 +13,8 @@ import 'package:state_city_population/src/city.dart';
 class StateCity {
   Map states = new Map();
 
-  init() {
-    new File('json/data.json')
+  Future init() async {
+    await new File('json/data.json')
         .readAsString()
         .then((fileContents) => JSON.decode(fileContents))
         .then((Map jsonData) {
@@ -26,6 +27,14 @@ class StateCity {
   }
 
   List<City> listCities(String UF) {
-    return states[UF];
+    List<City> cities = new List();
+
+    List<Map> name = states[UF];
+
+    name.forEach((city) {
+      cities.add(City.fromJson(city));
+    });
+
+    return cities;
   }
 }
