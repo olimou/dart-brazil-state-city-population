@@ -6,11 +6,19 @@ A library for Dart developers. It is awesome.
 
 A simple usage example:
 
-    import 'package:state_city_population/state_city_population.dart';
+```dart
+  var stateCity = new StateCity();
 
-    main() {
-      var awesome = new Awesome();
-    }
+  stateCity.init("BR").then((data) {
+    print(stateCity.listStates());
+
+    print(stateCity.listCities("SP"));
+
+    stateCity.listCities("SP").forEach((city) {
+      print("${city.name}: ${city.population}");
+    });
+  });
+```
 
 ## Features and bugs
 

@@ -4,14 +4,14 @@
 import 'package:state_city_population/state_city_population.dart';
 
 main() {
-  var awesome = new StateCity();
+  var stateCity = new StateCity();
 
-  awesome.init("BR").then((data) {
-    print(awesome.listStates());
+  stateCity.init("BR").then((data) {
+    print(stateCity.listStates());
 
-    print(awesome.listCities("SP"));
+    print(stateCity.listCities("SP"));
 
-    awesome.listCities("SP").forEach((city) {
+    stateCity.listCities("SP").forEach((city) {
       print("${city.name}: ${city.population}");
     });
   });
