@@ -6,10 +6,10 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Awesome awesome;
+    StateCity awesome;
 
     setUp(() {
-      awesome = new Awesome();
+      awesome = new StateCity();
     });
 
     test('First Test', () {

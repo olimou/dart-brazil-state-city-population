@@ -4,6 +4,6 @@
 import 'package:state_city_population/state_city_population.dart';
 
 main() {
-  var awesome = new Awesome();
+  var awesome = new StateCity();
   print('awesome: ${awesome.isAwesome}');
 }
